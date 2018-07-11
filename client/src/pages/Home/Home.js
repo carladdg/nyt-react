@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Card from "../../components/Card";
 import Article from "../../components/Article";
 
 class Home extends Component {
@@ -51,31 +52,35 @@ class Home extends Component {
     
     render = () => (
         <React.Fragment>
-            <h3>Articles</h3>
-            {this.state.articles.map(article => (
-                <Article
-                    key={article._id}
-                    _id={article._id}
-                    title={article.headline.main}
-                    url={article.web_url}
-                    data={article.pub_date}
-                    handleClick={this.handleArticleSave}
-                    handleDelete={this.handleArticleDelete}
-                    buttonText="Save Article"
-                />
-            ))}
-            <h3>Saved</h3>
-            {this.state.savedArticles.map(article => (
-                <Article
-                    key={article._id}
-                    _id={article._id}
-                    title={article.title}
-                    url={article.url}
-                    data={article.date}
-                    handleClick={this.handleArticleDelete}
-                    buttonText="Delete Article"
-                />
-            ))}
+            <Card cardTitle="Results">
+                {this.state.articles.map(article => (
+                    <Article
+                        key={article._id}
+                        _id={article._id}
+                        title={article.headline.main}
+                        url={article.web_url}
+                        date={article.pub_date}
+                        handleClick={this.handleArticleSave}
+                        handleDelete={this.handleArticleDelete}
+                        buttonText="Save Article"
+                        buttonColor="info"
+                    />
+                ))}
+            </Card>
+            <Card cardTitle="Saved">
+                {this.state.savedArticles.map(article => (
+                    <Article
+                        key={article._id}
+                        _id={article._id}
+                        title={article.title}
+                        url={article.url}
+                        date={article.date}
+                        handleClick={this.handleArticleDelete}
+                        buttonText="Delete Article"
+                        buttonColor="secondary"
+                    />
+                ))}
+            </Card>
         </React.Fragment>
     )
 }

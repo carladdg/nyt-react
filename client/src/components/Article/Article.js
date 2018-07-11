@@ -1,12 +1,13 @@
 import React from "react";
 
 const Article = props => (
-    <React.Fragment>
-        <p>{props.title}</p>
-        <button onClick={() => props.handleClick(props._id)}>
+    <li class="list-group-item">
+        <a href={props.url} target="_blank">{props.title}</a>
+        <p>Published {props.date}</p>
+        <button class={`btn btn-${props.buttonColor}`} onClick={() => props.handleClick(props._id)}>
             {props.buttonText}
         </button>
-    </React.Fragment>
+    </li>
 )
 
 export default Article;
