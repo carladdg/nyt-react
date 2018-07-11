@@ -21,8 +21,8 @@ class Home extends Component {
     getArticles = () => {
         API.getArticles({
             q: this.state.q,
-            begin_date: this.state.start_year ? this.state.start_year + "0101" : this.state.start_year,
-            end_date: this.state.end_year ? this.state.end_year + "0101" : this.state.end_year
+            begin_date: this.formatDate(this.state.start_year),
+            end_date: this.formatDate(this.state.end_year)
         })
             .then(res => this.setState({ articles: res.data }))
             .catch(err => console.log(err));
@@ -61,6 +61,15 @@ class Home extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         this.getArticles();
+    }
+
+    formatDate = date => {
+        if (date) {
+            const formattedDate = date + "0101";
+            return formattedDate;
+        } else {
+            return date;
+        }
     }
     
     render = () => (
