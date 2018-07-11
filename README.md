@@ -7,7 +7,7 @@ This application pulls articles from the [`New York Times Article Search API`](h
 
 Articles can be saved, allowing users to run another search or return to the site at a later time while still having easy access to the stories that piqued their interest. 
 
-Check out the app at https://nyt-react-nu.herokuapp.com/.
+Check out the app [here](https://nyt-react-nu.herokuapp.com/).
 
 ---
 
