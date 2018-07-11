@@ -123,7 +123,7 @@ class Home extends Component {
                             handleClick={this.handleArticleSave}
                             handleDelete={this.handleArticleDelete}
                             buttonText="Save Article"
-                            buttonColor="info"
+                            buttonColor="warning"
                         />
                     ))}
                 </ul>
@@ -139,7 +139,7 @@ class Home extends Component {
                             date={article.date}
                             handleClick={this.handleArticleDelete}
                             buttonText="Delete Article"
-                            buttonColor="secondary"
+                            buttonColor="outline-warning"
                         />
                     ))}
                 </ul>
