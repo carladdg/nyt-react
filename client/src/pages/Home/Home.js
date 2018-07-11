@@ -10,7 +10,7 @@ class Home extends Component {
         savedArticles: [],
         q: "",
         start_year: "",
-        end_year: ""
+        end_year: "",
     }
 
     componentDidMount = () => {
@@ -21,8 +21,8 @@ class Home extends Component {
     getArticles = () => {
         API.getArticles({
             q: this.state.q,
-            start_year: this.state.start_year,
-            end_year: this.state.end_year
+            begin_date: this.state.start_year ? this.state.start_year + "0101" : this.state.start_year,
+            end_date: this.state.end_year ? this.state.end_year + "0101" : this.state.end_year
         })
             .then(res => this.setState({ articles: res.data }))
             .catch(err => console.log(err));

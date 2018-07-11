@@ -15,6 +15,7 @@ module.exports = {
         params
       })
       .then(response => {
+        console.log(params);
         db.Article
           .find()
           .then(dbArticles =>
