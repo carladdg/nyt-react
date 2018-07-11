@@ -2,11 +2,9 @@ import React from "react";
 import "./Card.css";
 
 const Card = props => (
-    <div class="card">
-        <div class="card-header">{props.cardTitle}</div>
-        <ul class="list-group list-group-flush">
-            {props.children}
-        </ul>
+    <div className="card">
+        <div className="card-header">{props.cardTitle}</div>
+        {props.children}
     </div>
 )
 
